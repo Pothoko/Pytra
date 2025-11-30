@@ -1,0 +1,285 @@
+<!-- 
+    EJEMPLOS DE DATOS PARA PRUEBAS DEL SISTEMA PYTRA
+    ==================================================
+    
+    Puedes usar estos ejemplos para probar las diferentes características
+    del sistema de escaneo de malware.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Prueba - Pytra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0d1b3c 0%, #1a0a2e 50%, #A22BEB 100%);
+            color: #ccc;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #A22BEB;
+            border-bottom: 3px solid #A22BEB;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #ffffff;
+            margin-top: 30px;
+        }
+        p {
+            color: #ccc;
+        }
+        .example-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #A22BEB;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .example-box p {
+            color: #ccc;
+        }
+        .example-box h3 {
+            color: #A22BEB;
+        }
+        .example-box ul li {
+            color: #ccc;
+        }
+        .copy-btn {
+            background: #A22BEB;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .copy-btn:hover {
+            background: #0d1b3c;
+        }
+        code {
+            background: rgba(162, 43, 235, 0.2);
+            color: #A22BEB;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .label {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .label.safe {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .label.warning {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        .label.danger {
+            background: #ffebee;
+            color: #b71c1c;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #A22BEB 0%, #0d1b3c 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .back-link:hover {
+            background: linear-gradient(135deg, #0d1b3c 0%, #A22BEB 100%);
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        
+        Pytra - Ejemplos de Prueba
+    </h1>
+    <p>Usa estos ejemplos para probar todas las características del sistema.</p>
+
+    <h2>📁 Ejemplos de Nombres de Archivo</h2>
+    <div class="example-box">
+        <p><strong>Archivos Seguros:</strong> <span class="label safe">SEGURO</span></p>
+        <code>documento.pdf</code><br>
+        <code>imagen.jpg</code><br>
+        <code>video.mp4</code><br>
+        <code>presentacion.pptx</code><br>
+        <code>hoja_calculo.xlsx</code>
+    </div>
+
+    <div class="example-box">
+        <p><strong>Archivos Sospechosos:</strong> <span class="label warning">ADVERTENCIA</span></p>
+        <code>programa.exe</code><br>
+        <code>script.bat</code><br>
+        <code>comando.cmd</code><br>
+        <code>aplicacion.scr</code><br>
+        <code>macro.vbs</code>
+    </div>
+
+    <div class="example-box">
+        <p><strong>Archivos Potencialmente Maliciosos:</strong> <span class="label danger">PELIGRO</span></p>
+        <code>trojan.exe</code><br>
+        <code>malware.zip</code><br>
+        <code>virus.rar</code><br>
+        <code>ransomware.bat</code><br>
+        <code>backdoor.scr</code>
+    </div>
+
+    <h2>🌐 Ejemplos de URLs</h2>
+    <div class="example-box">
+        <p><strong>URLs Seguras:</strong> <span class="label safe">SEGURO</span></p>
+        <code>https://www.google.com</code><br>
+        <code>https://www.github.com</code><br>
+        <code>https://www.wikipedia.org</code><br>
+        <code>https://www.youtube.com</code><br>
+        <code>https://www.microsoft.com</code>
+    </div>
+
+    <div class="example-box">
+        <p><strong>URLs Sospechosas:</strong> <span class="label warning">ADVERTENCIA</span></p>
+        <code>https://free-download.net/crack</code><br>
+        <code>https://download-keygen.com</code><br>
+        <code>https://virus-free.org</code><br>
+        <code>https://suspicious-site.io</code><br>
+        <code>https://weird-domain.tk/download</code>
+    </div>
+
+    <div class="example-box">
+        <p><strong>URLs Maliciosas (Ejemplo):</strong> <span class="label danger">PELIGRO</span></p>
+        <code>https://malware.com</code><br>
+        <code>https://phishing.net</code><br>
+        <code>https://suspicious.org</code><br>
+        <code>https://fake-bank.com</code>
+    </div>
+
+    <h2>#️⃣ Ejemplos de Hashes</h2>
+    <div class="example-box">
+        <p><strong>MD5 (32 caracteres):</strong> <span class="label safe">LIMPIO</span></p>
+        <code>5d41402abc4b2a76b9719d911017c592</code><br>
+        <code>098f6bcd4621d373cade4e832627b4f6</code><br>
+        <code>e4d909c290d0fb1ca068ffaddf22cbd0</code>
+    </div>
+
+    <div class="example-box">
+        <p><strong>SHA-1 (40 caracteres):</strong> <span class="label warning">NO CLASIFICADO</span></p>
+        <code>aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d</code><br>
+        <code>2fd4e1c67a2d28fced849ee1bb76e7be61f23c44</code><br>
+        <code>b1b3773a05c0ed0176787a4f1574ff0075f7521e</code>
+    </div>
+
+    <div class="example-box">
+        <p><strong>SHA-256 (64 caracteres):</strong> <span class="label danger">MALWARE CONOCIDO</span></p>
+        <code>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code><br>
+        <code>ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</code><br>
+        <code>7d793037a6bd691c72256c1de6e7c7b2c9c70b6c7e84bf6e5a6d2c6f8e7b9a4c</code>
+    </div>
+
+    <h2>📋 Patrones de Escaneo</h2>
+    <div class="example-box">
+        <h3>¿Cómo funciona el motor de análisis?</h3>
+        <ul>
+            <li><strong>Archivos:</strong> Analiza la extensión, tamaño y patrones de nombre</li>
+            <li><strong>URLs:</strong> Verifica dominios contra listas negras y busca palabras clave sospechosas</li>
+            <li><strong>Hashes:</strong> Compara contra base de datos de malware conocido</li>
+        </ul>
+    </div>
+
+    <h2>🧪 Pasos de Prueba Recomendados</h2>
+    <div class="example-box">
+        <ol>
+            <li>
+                <strong>Prueba 1: Archivo Seguro</strong>
+                <ul>
+                    <li>Crea un archivo llamado: <code>documento.pdf</code></li>
+                    <li>Escanealo en la pestaña "Escanear Archivo"</li>
+                    <li>Esperado: Resultado SEGURO</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Prueba 2: URL Segura</strong>
+                <ul>
+                    <li>Ingresa: <code>https://www.google.com</code></li>
+                    <li>Haz clic en "Escanear URL"</li>
+                    <li>Esperado: Resultado SEGURO</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Prueba 3: Hash</strong>
+                <ul>
+                    <li>Copia un hash SHA-256</li>
+                    <li>Escanealo en la pestaña "Escanear Hash"</li>
+                    <li>Esperado: Resultado variable según randomización</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Prueba 4: Drag & Drop</strong>
+                <ul>
+                    <li>Arrastra un archivo a la zona de carga</li>
+                    <li>Verifica que se detecte correctamente</li>
+                    <li>Haz clic en "Escanear Archivo"</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Prueba 5: Estadísticas</strong>
+                <ul>
+                    <li>Realiza varios escaneos</li>
+                    <li>Verifica que se actualicen los contadores</li>
+                    <li>Recarga la página y confirma que persistan</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h2>💡 Notas sobre la Simulación</h2>
+    <div class="example-box">
+        <p>
+            El sistema actual es una <strong>demostración educativa</strong>. Los resultados de escaneo son simulados usando:
+        </p>
+        <ul>
+            <li>Análisis de patrones en nombres de archivo</li>
+            <li>Detección de palabras clave sospechosas</li>
+            <li>Generadores de números aleatorios</li>
+            <li>Lógica simulada de riesgo</li>
+        </ul>
+        <p>
+            Para un sistema real, necesitarías integrar APIs como:
+            <ul>
+                <li>VirusTotal API</li>
+                <li>Google Safe Browsing</li>
+                <li>URLhaus</li>
+                <li>YARA rules</li>
+                <li>Motores antivirus profesionales</li>
+            </ul>
+        </p>
+    </div>
+
+    <h2>🔗 Volver al Sistema</h2>
+    <a href="index.html" class="back-link">Ir al Sistema Pytra</a>
+
+    <hr style="margin-top: 40px; margin-left: auto; margin-right: auto; max-width: 1200px;">
+    <footer style="text-align: center; color: #999; margin-top: 20px;">
+        <p>Ejemplos de prueba para Pytra © 2025</p>
+    </footer>
+</body>
+</html>

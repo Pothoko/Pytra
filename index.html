@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pytra - Sistema de Escaneo de Malware</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>Pytra</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Inicio</a>
+                    <a href="#scanner" class="nav-link">Escanear</a>
+                    <a href="#about" class="nav-link">Acerca de</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Protege tu Sistema con Pytra</h2>
+                <p>Escanea archivos y enlaces en busca de amenazas de seguridad en tiempo real</p>
+                <a href="#scanner" class="cta-button">Comenzar Escaneo</a>
+            </div>
+            <div class="hero-illustration">
+                <div class="shield-animation">🛡️</div>
+            </div>
+        </section>
+
+        <!-- Scanner Section -->
+        <section id="scanner" class="scanner-section">
+            <h2>Centro de Escaneo</h2>
+            <div class="scanner-container">
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="file-scan">Escanear Archivo</button>
+                    <button class="tab-button" data-tab="url-scan">Escanear URL</button>
+                    <button class="tab-button" data-tab="hash-scan">Escanear Hash</button>
+                </div>
+
+                <!-- Tab 1: File Scanner -->
+                <div id="file-scan" class="tab-content active">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📁</div>
+                        <h3>Arrastra tu archivo aquí</h3>
+                        <p>o haz clic para seleccionar</p>
+                        <input type="file" id="fileInput" hidden>
+                    </div>
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <p><strong>Archivo:</strong> <span id="fileName"></span></p>
+                        <p><strong>Tamaño:</strong> <span id="fileSize"></span></p>
+                        <button class="scan-button" id="scanFileBtn">Escanear Archivo</button>
+                    </div>
+                </div>
+
+                <!-- Tab 2: URL Scanner -->
+                <div id="url-scan" class="tab-content">
+                    <div class="input-group">
+                        <input type="url" id="urlInput" placeholder="Ingresa la URL a escanear (ej: https://example.com)" class="url-input">
+                        <button class="scan-button" id="scanUrlBtn">Escanear URL</button>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Hash Scanner -->
+                <div id="hash-scan" class="tab-content">
+                    <div class="input-group">
+                        <textarea id="hashInput" placeholder="Ingresa el hash (MD5, SHA1, SHA256)" class="hash-input" rows="4"></textarea>
+                        <button class="scan-button" id="scanHashBtn">Escanear Hash</button>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="resultsContainer" class="results-container" style="display: none;">
+                    <div class="results-header">
+                        <h3>Resultados del Escaneo</h3>
+                        <button class="close-btn" onclick="closeResults()">&times;</button>
+                    </div>
+                    <div id="resultsContent" class="results-content"></div>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Escaneando...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2>Características</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Escaneo Rápido</h3>
+                    <p>Análisis instantáneo de archivos y enlaces con resultados en segundos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Detección Avanzada</h3>
+                    <p>Tecnología de IA para detectar amenazas conocidas y desconocidas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Análisis Detallado</h3>
+                    <p>Reportes comprensivos con información sobre cada amenaza detectada</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Privacidad Garantizada</h3>
+                    <p>Tus archivos se analizan de forma segura y se eliminan automáticamente</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Verificación de URLs</h3>
+                    <p>Comprueba si un enlace es seguro antes de hacer clic</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Actualizaciones en Tiempo Real</h3>
+                    <p>Base de datos de malware actualizada constantemente</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <h3 id="filesScanned">0</h3>
+                <p>Archivos Escaneados</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="threatsDetected">0</h3>
+                <p>Amenazas Detectadas</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="urlsChecked">0</h3>
+                <p>URLs Verificadas</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>Acerca de Pytra</h2>
+            <div class="about-content">
+                <p>Pytra es un sistema avanzado de detección de malware diseñado para proteger tu seguridad digital. Utilizamos tecnologías de vanguardia para identificar y neutralizar amenazas antes de que causen daño.</p>
+                <p>Nuestro sistema integra múltiples motores de escaneo y analiza archivos contra bases de datos de malware actualizadas continuamente.</p>
+                <h3>¿Por qué confiar en nosotros?</h3>
+                <ul>
+                    <li>✓ Precisión superior al 99% en detección de malware</li>
+                    <li>✓ Análisis heurístico avanzado</li>
+                    <li>✓ Soporte 24/7</li>
+                    <li>✓ Años de experiencia en ciberseguridad</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contacto</h2>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Pytra. Todos los derechos reservados. | <a href="#">Privacidad</a> | <a href="#">Términos</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
